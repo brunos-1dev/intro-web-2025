@@ -119,8 +119,20 @@
                 <input id="apellido" name="apellido" type="text">
             </div>
             <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email">
+                <label for="edad">Edad</label>
+                <input id="edad" name="edad" type="number">
+            </div>
+            <div>
+                <label for="fecha">Fecha de nacimiento</label>
+                <input id="fecha" name="fecha" type="date">
+            </div>
+            <div>
+                <label for="genero">Género</label>
+                <select name="genero">
+                    <option value="FEM">Femenino</option>
+                    <option value="MAS">Masculino</option>
+                    <option value="NBI">No binario</option>
+                </select>
             </div>
             <div>
                 <label for="direccion">Dirección</label>
@@ -135,33 +147,27 @@
                 <input id="provincia" name="provincia" type="text">
             </div>
             <div>
-                <label for="edad">Edad</label>
-                <input id="edad" name="edad" type="number">
+                <label for="codigo">Código postal</label>
+                <input id="codigo" name="codigo" type="number">
             </div>
             <div>
-                <label for="fecha">Fecha de nacimiento</label>
-                <input id="fecha" name="fecha" type="date">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email">
             </div>
             <div>
-                <label for="pais">País de nacimiento</label>
-                <select name="pais">
-                    <option value="ARG">Argentina</option>
-                    <option value="BRA">Brasil</option>
-                    <option value="URU">Uruguay</option>
-                    <option value="PAR">Paraguay</option>
-                    <option value="CHI">Chile</option>
-                    <option value="PER">Perú</option>
-                </select>
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" name="telefono" type="number">
             </div>
             <div>
-                <span>Sexo</span>
-                <input type="radio" name="sex" value="F"> Femenino
-                <input type="radio" name="sex" value="M"> Masculino
-                <input type="radio" name="sex" value="N"> N/A
+                <span>¿Desea recibir novedades?</span>
+                <input type="radio" name="sino" value="S"> Si
+                <input type="radio" name="sino" value="N"> No
             </div>
-            
+            <div>
+                <input type="submit" value="Enviar datos">
+                <input type="reset" value="Reiniciar valores">
+            </div>       
     </form>
-
     </div>   
     
 </body>
