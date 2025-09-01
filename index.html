@@ -106,6 +106,69 @@
                 </ul>
             </aside>
         </article>
-    </main>   
+    </main>
+    <div>
+        <h2>FORMULARIO DE SUSCRIPCIÓN</h2>
+        <form>
+            <div>
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" type="text">
+            </div>
+            <div>
+                <label for="apellido">Apellido</label>
+                <input id="apellido" name="apellido" type="text">
+            </div>
+            <div>
+                <label for="edad">Edad</label>
+                <input id="edad" name="edad" type="number">
+            </div>
+            <div>
+                <label for="fecha">Fecha de nacimiento</label>
+                <input id="fecha" name="fecha" type="date">
+            </div>
+            <div>
+                <label for="genero">Género</label>
+                <select name="genero">
+                    <option value="FEM">Femenino</option>
+                    <option value="MAS">Masculino</option>
+                    <option value="NBI">No binario</option>
+                </select>
+            </div>
+            <div>
+                <label for="direccion">Dirección</label>
+                <input id="direccion" name="direccion" type="text">
+            </div>
+            <div>
+                <label for="localidad">Localidad</label>
+                <input id="localidad" name="localidad" type="text">
+            </div>
+            <div>
+                <label for="provincia">Provincia</label>
+                <input id="provincia" name="provincia" type="text">
+            </div>
+            <div>
+                <label for="codigo">Código postal</label>
+                <input id="codigo" name="codigo" type="number">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email">
+            </div>
+            <div>
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" name="telefono" type="number">
+            </div>
+            <div>
+                <span>¿Desea recibir novedades?</span>
+                <input type="radio" name="sino" value="S"> Si
+                <input type="radio" name="sino" value="N"> No
+            </div>
+            <div>
+                <input type="submit" value="Enviar datos">
+                <input type="reset" value="Reiniciar valores">
+            </div>       
+    </form>
+    </div>   
+    
 </body>
 </html>
