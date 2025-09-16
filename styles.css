@@ -24,6 +24,39 @@ body{
   text-rendering: optimizeLegibility;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px var(--pad);
+  border-bottom: 1px solid var(--border);
+}
+
+nav .logo {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+nav .menu {
+  display: flex;
+  gap: 20px;
+}
+
+nav .menu a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+nav .hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
 .article-page{
   max-width: var(--maxw);
   margin-inline: auto;
@@ -68,7 +101,7 @@ body{
 }
 
 .article-page .meta{
-  font-size: .9375rem; /* ~15px */
+  font-size: .9375rem;
   color: var(--muted);
   margin: 0 0 18px;
 }
@@ -76,6 +109,7 @@ body{
 .article-page .hero{ 
     margin: 0 0 16px; 
 }
+
 .article-page .hero img{
   display: block;
   width: 100%;
@@ -92,6 +126,7 @@ body{
   font-size: 1rem; 
   line-height: 1.75;
 }
+
 .article-page .content strong{ 
     font-weight: 700; 
 }
@@ -104,8 +139,10 @@ body{
 }
 
 .article-page .content ul{ 
-    padding-left: 1.2rem; margin: 0 0 16px; 
+    padding-left: 1.2rem; 
+    margin: 0 0 16px; 
 }
+
 .article-page .content li{ 
     margin-bottom: .5rem; 
 }
@@ -116,16 +153,10 @@ body{
   text-underline-offset: 2px;
 }
 
-
 .article-page .info-block{
   margin-top: 24px;
   padding-top: 12px;
   border-top: 1px solid var(--border);
-}
-
-
-@media (min-width: 1100px){
-  .article-page{ padding: 32px 0; }
 }
 
 .subscribe{
@@ -134,15 +165,13 @@ body{
   padding: 0 16px;
 }
 
-.subscribe h2{
+.subscribe h3{
   font-family: 'Merriweather', Georgia, serif;
   font-size: clamp(22px, 3vw, 28px);
   margin: 0 0 16px;
   border-top: 1px solid var(--border);
   padding-top: 20px;
-   
 }
-
 
 .subscribe-form{
   display: grid;
@@ -154,34 +183,17 @@ body{
   padding: 18px;
 }
 
-
 .subscribe-form > div{
   display: grid;
   gap: 6px;
 }
 
-
-.subscribe-form > div{
-  grid-column: span 1;
-}
-
-
-.subscribe-form > div:has([type="date"]),
-.subscribe-form > div:has(select),
-.subscribe-form > div:has([type="email"]),
-.subscribe-form > div:has([type="number"]),
-.subscribe-form > div:has([type="text"])#direccion,
-.subscribe-form > div:has(#telefono){
-  
-}
-
-
-.subscribe-form label, .subscribe-form span{
+.subscribe-form label, 
+.subscribe-form span{
   font-size: .95rem;
   color: #333;
   font-weight: 500;
 }
-
 
 .subscribe-form input[type="text"],
 .subscribe-form input[type="number"],
@@ -206,7 +218,6 @@ body{
   box-shadow: 0 0 0 3px rgba(59,130,246,.15); 
 }
 
-
 .subscribe-form [type="radio"]{
   accent-color: var(--link);
   transform: translateY(1px);
@@ -217,7 +228,6 @@ body{
   align-items: center;
   gap: 10px;
 }
-
 
 .subscribe-form input[type="submit"],
 .subscribe-form input[type="reset"]{
@@ -231,7 +241,6 @@ body{
 
 .subscribe-form input[type="submit"]{
   background: var(--link);
-  
   box-shadow: 0 2px 6px rgba(59,130,246,.25);
 }
 
@@ -245,7 +254,6 @@ body{
   color: #fff;
 }
 
-
 .subscribe-form input[type="reset"]{
   background: #f1f5f9;
   color: #111;
@@ -254,16 +262,78 @@ body{
   background: #e2e8f0;
 }
 
-
-#direccion, #email{
+#direccion, 
+#email,
+#telefono{
   grid-column: 1 / -1;   
 }
 
 @media (max-width: 640px){
-  .subscribe-form{
-    grid-template-columns: 1fr;
+  nav .menu {
+    display: none; 
   }
-  .subscribe-form > div{
-    grid-column: 1 / -1;
+  nav .hamburger {
+    display: block;
+  }
+  .subscribe-form {
+    grid-template-columns: 1fr; 
+  }
+  .menu-icon {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .breadcrumbs {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+
+  .menu-toggle:checked + .menu-icon + .breadcrumbs {
+    display: flex;
+  }
+
+  .sep {
+    display: none; /* ocultamos los separadores en mobile */
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .article-page {
+    max-width: 90%;
+    padding: 32px var(--pad);
+  }
+  .subscribe-form {
+    grid-template-columns: 1fr 1fr; /* 2 columnas */
+  }
+  nav .menu {
+    display: flex;
+    gap: 20px;
+  }
+  nav .hamburger {
+    display: none;
+  }
+  .breadcrumbs {
+    display: block;
+  }
+}
+
+@media (min-width: 1025px) {
+  .article-page {
+    max-width: var(--maxw);
+    padding: 40px var(--pad);
+  }
+  .subscribe-form {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 24px;
+  }
+  nav .menu {
+    display: flex;
+    gap: 24px;
+  }
+  nav .hamburger {
+    display: none;
   }
 }
